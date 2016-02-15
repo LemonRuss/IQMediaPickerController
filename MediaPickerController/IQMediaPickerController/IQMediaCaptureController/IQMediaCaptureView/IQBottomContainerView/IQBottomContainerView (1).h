@@ -1,5 +1,5 @@
 //
-//  IQAssetsPickerShadowView.h
+//  IQBottomContainerView.h
 //  https://github.com/hackiftekhar/IQMediaPickerController
 //  Copyright (c) 2013-14 Iftekhar Qurashi.
 //
@@ -21,9 +21,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-
 #import <UIKit/UIKit.h>
 
-@interface IQAssetsPickerShadowView : UIView
+@interface IQBottomContainerView : UIView
+
+@property(nonatomic, assign) UIView *topContentView;
+@property(nonatomic, assign) UIView *leftContentView;
+@property(nonatomic, assign) UIView *middleContentView;
+@property(nonatomic, assign) UIView *rightContentView;
 
 @end

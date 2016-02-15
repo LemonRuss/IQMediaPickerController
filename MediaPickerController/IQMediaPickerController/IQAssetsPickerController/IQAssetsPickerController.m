@@ -205,6 +205,7 @@
     assetsVC.pickerType = self.pickerType;
     assetsVC.assetsGroup = [_assetGroups objectAtIndex:indexPath.row];
     assetsVC.assetController = self;
+  //  [self presentViewController:assetsVC animated:YES completion:nil];
     [self.navigationController pushViewController:assetsVC animated:YES];
 }
 
