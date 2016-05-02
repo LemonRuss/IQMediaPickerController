@@ -81,7 +81,7 @@
                            }
                            else {
                                if (group.numberOfAssets != 0) {
-                                   [_assetGroups addObject:group];
+                                   [_assetGroups insertObject:group atIndex:0];
                                }
                            }
 
