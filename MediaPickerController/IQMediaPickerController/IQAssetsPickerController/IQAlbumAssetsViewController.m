@@ -256,7 +256,7 @@
     NSMutableArray *selectedImages = [[NSMutableArray alloc] init];
     
      NSInteger index = self.assetsGroup.numberOfAssets - 1 - indexPath.row;
-    [self.assetsGroup enumerateAssetsAtIndexes: index options:NSEnumerationConcurrent usingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
+    [self.assetsGroup enumerateAssetsAtIndexes: [NSIndexSet indexSetWithIndex: index] options:NSEnumerationConcurrent usingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
       
       if (result)
       {
