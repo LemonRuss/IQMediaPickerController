@@ -225,7 +225,7 @@
      }
    }];
   
-  BOOL selected = [self.selectedAssets containsIndex:indexPath.row];
+  BOOL selected = [self.selectedAssets containsIndex:index];
   
   cell.checkmarkView.alpha = selected?1.0:0.0;
   
@@ -236,17 +236,19 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+  NSInteger index = self.assetsGroup.numberOfAssets - 1 - indexPath.row;
   IQAssetsCell *cell = (IQAssetsCell *)[collectionView cellForItemAtIndexPath:indexPath];
   
-  BOOL previouslyContainsIndex = [self.selectedAssets containsIndex:indexPath.row];
+  BOOL previouslyContainsIndex = [self.selectedAssets containsIndex:index];
+  
   
   if (previouslyContainsIndex)
   {
-    [self.selectedAssets removeIndex:indexPath.row];
+    [self.selectedAssets removeIndex:index];
   }
   else
   {
-    [self.selectedAssets addIndex:indexPath.row];
+    [self.selectedAssets addIndex:index];
   }
   
   
@@ -255,8 +257,7 @@
     NSMutableArray *selectedVideo = [[NSMutableArray alloc] init];
     NSMutableArray *selectedImages = [[NSMutableArray alloc] init];
     
-     NSInteger index = self.assetsGroup.numberOfAssets - 1 - indexPath.row;
-    [self.assetsGroup enumerateAssetsAtIndexes: [NSIndexSet indexSetWithIndex: index] options:NSEnumerationConcurrent usingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
+    [self.assetsGroup enumerateAssetsAtIndexes: [NSIndexSet indexSetWithIndex: indexPath.row] options:NSEnumerationConcurrent usingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
       
       if (result)
       {
