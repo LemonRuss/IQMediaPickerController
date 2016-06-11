@@ -257,7 +257,7 @@
     NSMutableArray *selectedVideo = [[NSMutableArray alloc] init];
     NSMutableArray *selectedImages = [[NSMutableArray alloc] init];
     
-    [self.assetsGroup enumerateAssetsAtIndexes: [NSIndexSet indexSetWithIndex: indexPath.row] options:NSEnumerationConcurrent usingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
+    [self.assetsGroup enumerateAssetsAtIndexes: [NSIndexSet indexSetWithIndex: index] options:NSEnumerationConcurrent usingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
       
       if (result)
       {
